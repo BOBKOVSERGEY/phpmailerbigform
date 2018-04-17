@@ -4,6 +4,14 @@ require_once __DIR__ . '/vendor/autoload.php';
 use PHPMailer\PHPMailer\PHPMailer;
 
 $message = '';
+function cleanText($string)
+{
+  $string = trim($string);
+  $string = stripslashes($string);
+  $string = htmlspecialchars($string);
+  return $string;
+}
+
 if (isset($_POST["submit"])) {
   $programmingLanguage = '';
 
